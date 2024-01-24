@@ -1,1 +1,143 @@
 /* TODO: Example 02 (Activity 3) CSS goes here */
+
+html{
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	background: #fffdf5;
+}
+
+*, ::before, ::after{
+	box-sizing: inherit;
+}
+
+nav{
+    padding: .5rem;
+	border: 1px solid #8887cb;
+}
+
+nav > ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;	
+}
+
+nav > ul > li{
+	margin: 0;
+	display: inline-block;
+	margin: .5rem; 
+	
+}
+
+.pull-left{
+	float: left;
+}
+
+.pull-right{
+	float: right;
+}
+
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+nav a:link, nav a:visited, nav a:active{
+	text-decoration: none;
+	color: #6564a5;
+}
+
+nav a:hover{
+	text-decoration: none;
+	color: #93597f;
+}
+
+footer{
+	margin: 2em .5rem;
+	padding: .5rem;
+	border-top: 1px solid #8887cb;
+}
+
+img{
+	max-width: 300px;
+	width: 50%;
+	border: 1px solid #7597a8;
+	border-radius: 10px;
+	margin: .75rem;
+}
+
+.container{
+	margin: 0 auto; 
+	width: 80%;
+	counter-reset: article;  /*set a counter named article and its initial value to zero*/
+}
+
+/*Styling Articles*/
+article > h1::before{
+	counter-increment: article; /*increases the value of article by 1*/
+	content: "Article " counter(article) ": "; /*display the word article then the value of the article and a colon before the content of each h1 */
+	color: #6564a5;
+}
+
+/*Styling Circles*/
+.circle{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin: .5rem;
+    background-color: #8988bf;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.vcenter{
+    line-height: 200px;
+}
+
+.vcenter2{
+    line-height: 200px;
+    margin: 0 calc((100% - 800px)/8);
+}
+
+/*Equal-Height Columns*/
+.column{
+    float: left;
+    padding: 10px;
+    color: black;
+}
+
+.left-col{
+    background-color: #8988bf;
+    width: 25%;
+    padding: 10px;
+}
+
+.middle-col{
+	background-color: #6b6aa3;
+    width: 50%;
+    padding: 10px;
+}
+
+.right-col{
+    background-color: #8988bf;
+    width: 25%;
+    padding: 10px;
+}
+
+.equal-height{
+    display: table;
+}
+
+.equal-height .column{
+    float: none;
+    display: table-cell;
+}
+
+/*Multi Column Styles*/
+.multi-col{
+    columns: 3;
+    column-gap: 2rem;
+}
