@@ -1,0 +1,101 @@
+/*Basic Styling*/
+html{
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	background: #fffdf5;
+}
+
+*, ::before, ::after{
+	box-sizing: inherit;
+}
+
+.pull-left{
+	float: left;
+}
+
+.pull-right{
+	float: right;
+}
+
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/*Nav Styling*/
+nav{
+    padding: .5rem;
+	border: 1px solid #8887cb;
+    text-align: center;
+}
+
+nav > ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;	
+}
+
+nav > ul > li{
+	margin: 0;
+	display: inline-block;
+	margin: .5rem; 
+    border-right: 2px solid gray;
+    padding: 0 15px;
+	
+}
+
+nav > ul > li:last-child{
+    border-right: 0;
+}
+
+nav a:link, nav a:visited, nav a:active{
+	text-decoration: none;
+	color: #6564a5;
+}
+
+nav a:hover{
+	text-decoration: none;
+	color: #93597f;
+}
+
+/*Section Styling*/
+#section1{
+    border-bottom: 1px solid #8887cb;
+}
+
+#section2{
+    border-bottom: 1px solid #8887cb;
+}
+
+/*Image Styling*/
+img{
+	max-width: 300px;
+	width: 50%;
+	border: 1px solid #7597a8;
+	border-radius: 10px;
+	margin: .75rem;
+}
+
+/*Button Styling*/
+#button{
+    background-color: rgb(172, 171, 171);
+    border: none;
+	padding: .5rem;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 16px;
+    margin: 6px 6px;
+}
+
+.container{
+    text-align: center;
+}
+
+/*Footer Styling*/
+footer{
+	margin: 2em .5rem;
+	padding: .5rem;
+	border-top: 1px solid #8887cb;
+}
