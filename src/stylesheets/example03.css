@@ -1,1 +1,52 @@
 /* TODO: Example 03 (Activity 4) CSS goes here */
+.gallery{
+    border: 2px solid #5c37ab;
+    border-radius: .75rem;
+    padding: 5px;
+    display: grid;
+    gap: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.image{
+    margin: 5px;
+}
+
+div{
+    flex: 1;
+}
+
+/*Display the entire top as a single row*/
+.gallery > .top{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/*Display top left, middle, and bottom as columns*/
+.gallery > .top > .left, 
+.gallery > .top > .middle,
+.gallery > .top > .right{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/*Display the top 3 in the right column as a row,
+  Display the bottom 2 in the right column as a row*/
+.gallery > .top > .right > .top, 
+.gallery > .top > .right > .bottom{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/*Display the bottom 2 images as a row*/
+.gallery > .bottom {
+    display: flex;
+    flex-flow: row nowrap;
+}

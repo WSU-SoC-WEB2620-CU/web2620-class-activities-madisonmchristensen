@@ -1,0 +1,67 @@
+
+/* TODO: Example 03 (Activity 4) CSS goes here */
+.container{
+    border: 2px solid #5c37ab;
+    border-radius: .75rem;
+    padding: 5px;
+    display: grid;
+    gap: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.flexbox-item{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+
+    border: 3px solid #333;
+    background-color: #dfdfdf;
+}
+
+div{
+    flex: 1;
+}
+
+/*Items from top to bottom*/
+
+/*Item 1 (header)*/
+.item1{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/*Items 2-6 (navigation)*/
+.group1{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/*Item 7 (big image)*/
+.item7{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/*Items 8-11 (4 black squares together)*/
+.group1{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/*Item 12 (smaller image next to 4 black squares)*/
+.item12{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/*Item 13 (footer)*/
+.item13{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+
