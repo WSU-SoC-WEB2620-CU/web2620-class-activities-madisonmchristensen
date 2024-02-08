@@ -1,92 +1,143 @@
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
 
-/* TODO: Example 03 (Activity 4) CSS goes here */
+body{
+    width: 80%;
+    margin: 0 auto 1rem;
+    text-align: center;
+    background-color: #eff0f2;
+}
+
+.box{
+    width: 100%; /* width and height are set to 100% so that it fill and be fluid instead of fixed*/
+    height: 100%;
+}
+
 .container{
-    border: 2px solid #5c37ab;
-    border-radius: .75rem;
-    padding: 5px;
-    display: grid;
-    gap: 10px;
+    display: flex;
+    flex: 1 1 0;
+    flex-flow: column nowrap;
+}
 
+.row1{
+    background-color: aqua;
+    display: flex;
+    flex: 1 1 50px; /* flex: 1 helps the boxes to "grow", if it was flex: 0 it wouldn't "grow" */
+    margin-bottom: .5rem;
+}
+
+.row2{
     display: flex;
     flex-flow: column nowrap;
 }
 
-.flexbox-item{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-
-    border: 3px solid #333;
-    background-color: #dfdfdf;
+.row2 > .box{
+    flex: 1 1 20px; /*flex: 1 grow, flex: 1 1 shrink, 20px is the initial size of the box*/
+    background-color: black;
+    margin-bottom: .5rem; /*creates the spaces between the boxes*/
 }
 
-div{
-    flex: 1;
-}
-
-
-
-.container > .middle > .left,
-.container > .middle > .right{
-    display: flex;
-    flex-flow: column nowrap; 
-}
-
-.container > .middle > .right > .group2,
-.container > .middle > .right > .group3{
-    display: flex;
-    flex-flow: row nowrap; 
-}
-
-.container > .bottom{
-    display: flex;
-    flex-flow: row nowrap; 
-}
-
-/*Items from top to bottom*/
-
-/*Item 1 (header)*/
-.item1{
-    display: flex;
-    flex-flow: row nowrap; 
-    width: 100%;
-}
-
-/*Items 2-6 (navigation)*/
-.group1{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-/*Item 7 (big image)*/
-.item7{
-    width: 55%;
-}
-
-/*Items 8-9 (4 black squares together (top 2))*/
-.group2{
-    width: 22.5%;
-}
-
-/*Items 10-11 (4 black squares together (bottom 2))*/
-.group3{
-    width: 22.5%;
-}
-
-/*Item 12 (smaller image next to 4 black squares)*/
-.item12{
+.row3{
     display: flex;
     flex-flow: column nowrap;
-    width: 45%;
 }
 
-/*Item 13 (footer)*/
-.item13{
+.row3 > .col1{
+    display: flex;
+    flex: 1 1 200px;
+    background-color: aqua;
+    margin-bottom: .5rem;
+}
+
+.row3 > .col2col3{
     display: flex;
     flex-flow: row nowrap;
-    width: 100%;
+    flex: 1 1 200px;
+    gap: 10px;
+}
+
+.row3 > .col2col3 > .col2{
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 50px; /*if you do 0 instead of 50px it will share the size qually between the two*/
+}
+
+.row3 > .col2col3 > .col2 > .col2left,
+.row3 > .col2col3 > .col2 > .col2right{
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 0;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.row3 > .col2col3 > .col2 > .col2left > .box,
+.row3 > .col2col3 > .col2 > .col2right > .box{
+    background-color: black;
+}
+
+.row3 > .col2col3 > .col3{
+    display: flex;
+    flex: 1 1 0;
+    background-color: aqua;
+    margin-bottom: .5rem;
+}
+
+.row4{
+    flex: 1 1 50px;
+    background-color: aqua;
+}
+
+
+
+/*Media Queries*/
+@media all and (min-width: 501px) and (max-width: 800px){
+    .row2{
+        flex-flow: row nowrap;
+        flex: 1 1 30px;
+        gap: 10px;
+        margin-top: .2rem;
+        margin-bottom: .5rem;
+    }
+
+    .row3 > .col1{
+        flex: 1 1 400px;
+    }
+
+    .row3 > .col2col3 > .col2  > .col2left,
+    .row3 > .col2col3 > .col2  > .col2right{
+        flex-flow: row nowrap;
+        gap: 10px;
+    }
+}
+
+@media all and (min-width: 801px){
+    .row2{
+        flex-flow: row nowrap;
+        flex: 1 1 20px;
+        gap: 10px;
+        margin-top: .2rem;
+        margin-bottom: .5rem;
+    }
+
+    .row3{
+        flex-flow: row nowrap;
+        flex: 1 1 300px;
+        gap: 10px;
+    }
+
+    .row3 > .col2col3{
+        flex-flow: column-reverse nowrap;
+        gap: 5px;
+    }
+
+    .row3 > .col2col3 > .col2{
+        flex-flow: row nowrap;
+        gap: 10px;
+        flex: 1 1 20px;
+    }
 }
 
 

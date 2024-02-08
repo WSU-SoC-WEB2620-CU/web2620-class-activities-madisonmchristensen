@@ -1,87 +1,139 @@
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
 body{
     width: 80%;
     margin: 0 auto 1rem;
     text-align: center;
+    background-color: #eff0f2;
 }
-
 
 .grid-item{
     width: 100%;
     height: 100%;
     margin: 5px;
-
-    border: 3px solid #333;
-    background-color: #dfdfdf;
 }
 
-/*5 rows and 7 columns*/
-
 .container{
-    border: 2px solid #6f2a45;
-    border-radius: .75rem;
-    padding: 5px;
     display: grid;
-    grid-template-rows: 1fr 1fr 3fr 2fr 2fr 1fr; /*5fr repeat(2, 3fr) 2fr repeat(2, 1fr) 2fr;*/
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 3fr repeat(5, 2fr) 16fr repeat(4, 4fr) 1fr;
     gap: 10px;
 
     grid-template-areas: "img1 img1 img1 img1 img1"
-                         "img2 img3 img4 img5 img6" /*How many columns they span is how many you place img2 spans 2 columns so is written as img2 img2*/
-                         "img7 img7 img7 img8 img8"
-                         "img7 img7 img7 img9 img10"
-                         "img7 img7 img7 img11 img12"
+                         "img2 img2 img2 img2 img2" 
+                         "img3 img3 img3 img3 img3"
+                         "img4 img4 img4 img4 img4"
+                         "img5 img5 img5 img5 img5"
+                         "img6 img6 img6 img6 img6"
+                         "img7 img7 img7 img7 img7"
+                         "img9 img9 img9 img8 img8"
+                         "img10 img10 img10 img8 img8"
+                         "img11 img11 img11 img8 img8"
+                         "img12 img12 img12 img8 img8"
                          "img13 img13 img13 img13 img13"
 
 }
 
+/*top header box*/
 .item1{
     grid-area: img1;
+    background-color: aqua;
 }
 
+/*items 2 - 6 are black navigation boxes*/
 .item2{
     grid-area: img2;
+    background-color: black;
 }
 
 .item3{
     grid-area: img3;
+    background-color: black;
 }
 
 .item4{
     grid-area: img4;
+    background-color: black;
 }
 
 .item5{
     grid-area: img5;
+    background-color: black;
 }
 
 .item6{
     grid-area: img6;
+    background-color: black;
 }
 
+/*big box*/
 .item7{
     grid-area: img7;
+    background-color: aqua;
 }
 
+/*smaller blue box by the 4 black boxes*/
 .item8{
     grid-area: img8;
+    background-color: aqua;
 }
 
+/*items 9 - 12 are the 4 black boxes*/
 .item9{
     grid-area: img9;
+    background-color: black;
 }
 
 .item10{
     grid-area: img10;
+    background-color: black;
 }
 
 .item11{
     grid-area: img11;
+    background-color: black;
 }
 
 .item12{
     grid-area: img12;
+    background-color: black;
 }
 
+/*footer box*/
 .item13{
     grid-area: img13;
+    background-color: aqua;
+}
+
+
+
+/*Media Queries*/
+@media all and (min-width: 501px) and (max-width: 800px){
+    .container{
+        grid-template-rows: 3fr 2fr 24fr 4fr 4fr 3fr;
+    
+        grid-template-areas: "img1 img1 img1 img1 img1"
+                             "img2 img3 img4 img5 img6"
+                             "img7 img7 img7 img7 img7"
+                             "img9 img10 img8 img8 img8"
+                             "img11 img12 img8 img8 img8"
+                             "img13 img13 img13 img13 img13"
+    
+    }
+}
+
+@media all and (min-width: 801px){
+   .container{
+        grid-template-rows: 4fr 1fr 12fr 4fr 4fr 4fr;
+        
+
+        grid-template-areas: "img1 img1 img1 img1 img1"
+                             "img2 img3 img4 img5 img6" 
+                             "img7 img7 img7 img8 img8"
+                             "img7 img7 img7 img9 img10"
+                             "img7 img7 img7 img11 img12"
+                             "img13 img13 img13 img13 img13"
+   }
 }
