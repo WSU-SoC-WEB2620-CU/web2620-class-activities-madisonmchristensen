@@ -24,12 +24,32 @@ div{
     flex: 1;
 }
 
+
+
+.container > .middle > .left,
+.container > .middle > .right{
+    display: flex;
+    flex-flow: column nowrap; 
+}
+
+.container > .middle > .right > .group2,
+.container > .middle > .right > .group3{
+    display: flex;
+    flex-flow: row nowrap; 
+}
+
+.container > .bottom{
+    display: flex;
+    flex-flow: row nowrap; 
+}
+
 /*Items from top to bottom*/
 
 /*Item 1 (header)*/
 .item1{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row nowrap; 
+    width: 100%;
 }
 
 /*Items 2-6 (navigation)*/
@@ -37,30 +57,36 @@ div{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    width: 100%;
 }
 
 /*Item 7 (big image)*/
 .item7{
-    display: flex;
-    flex-flow: row nowrap;
+    width: 55%;
 }
 
-/*Items 8-11 (4 black squares together)*/
-.group1{
-    display: flex;
-    flex-flow: row wrap;
+/*Items 8-9 (4 black squares together (top 2))*/
+.group2{
+    width: 22.5%;
+}
+
+/*Items 10-11 (4 black squares together (bottom 2))*/
+.group3{
+    width: 22.5%;
 }
 
 /*Item 12 (smaller image next to 4 black squares)*/
 .item12{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+    width: 45%;
 }
 
 /*Item 13 (footer)*/
 .item13{
     display: flex;
     flex-flow: row nowrap;
+    width: 100%;
 }
 
 

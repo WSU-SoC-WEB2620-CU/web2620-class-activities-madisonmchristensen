@@ -3,7 +3,6 @@
     border: 2px solid #5c37ab;
     border-radius: .75rem;
     padding: 5px;
-    display: grid;
     gap: 10px;
 
     display: flex;
@@ -29,7 +28,7 @@ div{
     flex-flow: row nowrap;
 }
 
-/*Display top left, middle, and bottom as columns*/
+/*Display top left, middle, and right as columns*/
 .gallery > .top > .left, 
 .gallery > .top > .middle,
 .gallery > .top > .right{
