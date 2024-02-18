@@ -1,1 +1,132 @@
 /* TODO: Example 05 (Activity 6) CSS goes here */
+
+/****** BASIC STYLING ******/
+
+html{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background-color: #fffdf5;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+nav > ul > li{
+    background: #d5cbd5;
+    margin-left: 1rem;
+    list-style-type: none;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+.featured, .aside, .card{
+    background: #edbb97;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#login > input {
+    padding: .4rem;
+}
+
+#pricing > span:nth-child(2){
+    font-size: 4rem;
+}
+
+button{
+    background: #d86827;
+    padding: .75rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+}
+
+
+
+/****** GRID STYLING ******/
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns, size 1fr */
+    gap: 1rem;
+    background: #fef0e2;
+}
+
+header{
+    grid-column: 1 / span 1; 
+    /* 1/ span 1 starts at column 1 and spans 1 column so it will also end at column 2
+    1 / 2 starts at column 1 and ends at column 2 */
+    font-size: 2rem;
+    background: none;
+    align-self: center;
+}
+
+nav{
+    grid-column: 2 / span 2;
+    background: none;
+}
+
+.featured{
+    grid-area: 2 / 1 / span 2 / span 2 /*starts at row 2 spans 2 rows, starts at column 1 and spans 2 columns*/
+}
+
+#login{
+    grid-area: 2 / 3 / span 1 / span 1; /*starts at row 2, starts at column 3, row spans 2, column spans 2*/
+}
+
+#pricing{
+    grid-area: 3 / 3 / span 1 / span 1;
+}
+
+#card1{
+    grid-area: 4 / 1 / span 1 / span 1;
+}
+
+#card2{
+    grid-area: 4 / 2 / span 1 / span 1;
+}
+
+#card3{
+    grid-area: 4 / 3 / span 1 / span 1;
+}
+
+footer{
+    grid-area: 5 / 1 / span 1 / span 3;
+    justify-self: center;
+}
+
+
+
+/****** FLEXBOX STYLING ******/
+nav > ul {
+    display: flex;
+}
+
+nav > ul > li:nth-child(1) {
+    margin-left: auto;
+}
+
+#login{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+
+#pricing{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#pricing > button{
+    align-self: stretch;
+}
