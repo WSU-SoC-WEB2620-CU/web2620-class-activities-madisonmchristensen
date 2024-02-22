@@ -1,0 +1,128 @@
+/****** BASIC STYLING ******/
+
+html{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background-color: #fffdf5;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: #4f99f4;
+}
+
+nav > ul > li{
+    margin-left: 1rem;
+    list-style-type: none;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+.featured {
+    background: #d6d1cc;
+    padding: 1rem;
+}
+
+/* Image Styles */
+.new > .product > a > img{
+    width: 250px;
+    height: 300px;
+}
+
+.neat > .product > a > img{
+    width: 125px;
+    height: 250px;
+}
+
+.top > .topleft > .product > a > img,
+.top > .topmiddle > .product > a > img,
+.top > .topright > .product > a > img{
+    width: 50px;
+    height: 50px;
+}
+
+/* Button Styles */
+.featured > button{
+    background: #4f99f4;
+    color: white;
+    padding: .75rem;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.new > .product > button{
+    background: #4f99f4;
+    color: white;
+    padding: .75rem;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.neat > .product > button{
+    background: white;
+    color: #4f99f4;
+    border: #4f99f4;
+    padding: .75rem;
+    font-size: 1.2rem;
+}
+
+
+/****** GRID STYLING ******/
+
+body{
+    display: grid; /* 6 columns, 7 rows */
+    gap: 1rem;
+    background: #fef0e2;
+}
+
+header{
+    grid-column: 1 / span 2;
+    font-size: 2rem;
+    background: none;
+    align-self: center;
+}
+
+nav{
+    grid-area: 1 / 2 / span 1 / span 4;
+    background: none;
+}
+
+.featured{
+    grid-area: 2 / 1 / span 1 / span 6; 
+}
+
+.new > .product{
+    grid-area: 3 / 2 / span 1 / span 4; 
+}
+
+.special{
+    grid-area: 4 / 2 / span 1 / span 6;
+}
+
+.neat > .product{
+    grid-area: 5 / 2 / span 1 / span 4;
+}
+
+.top > .topleft > .product{
+    grid-area: 6 / 2 / span 1 / span 2;
+}
+
+.top > .topmiddle > .product{
+    grid-area: 6 / 2.5 / span 1 / span 2;
+}
+
+.top > .topright > .product{
+    grid-area: 6 / 3.5 / span 1 / span 2;
+}
+
+footer{
+    grid-area: 7 / 1 / span 1 / span 6;
+    justify-self: center;
+}
