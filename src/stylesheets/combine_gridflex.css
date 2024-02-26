@@ -4,7 +4,7 @@ html{
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
-    background-color: #fffdf5;
+    background: #fef0e2;
 }
 
 *{
@@ -13,7 +13,7 @@ html{
 
 nav > ul > li > a {
     text-decoration: none;
-    color: #4f99f4;
+    color: rgb(173, 148, 202);
 }
 
 nav > ul > li{
@@ -37,7 +37,7 @@ h1{
 }
 
 .neat > .product > a > img{
-    width: 125px;
+    width: 150px;
     height: 250px;
 }
 
@@ -50,7 +50,7 @@ h1{
 
 /* Button Styles */
 .featured > button{
-    background: #4f99f4;
+    background: rgb(173, 148, 202);
     color: white;
     padding: .75rem;
     border: none;
@@ -58,7 +58,7 @@ h1{
 }
 
 .new > .product > button{
-    background: #4f99f4;
+    background: rgb(173, 148, 202);
     color: white;
     padding: .75rem;
     border: none;
@@ -67,8 +67,8 @@ h1{
 
 .neat > .product > button{
     background: white;
-    color: #4f99f4;
-    border: #4f99f4;
+    color: rgb(173, 148, 202);
+    border: 1px solid rgb(173, 148, 202);
     padding: .75rem;
     font-size: 1.2rem;
 }
@@ -77,52 +77,201 @@ h1{
 /****** GRID STYLING ******/
 
 body{
-    display: grid; /* 6 columns, 7 rows */
+    display: grid; /* 5 columns, 7 rows */
+    grid-template-columns: 1fr, 2fr, 2fr, 2fr, 1fr; 
     gap: 1rem;
-    background: #fef0e2;
 }
 
 header{
     grid-column: 1 / span 2;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background: none;
     align-self: center;
 }
 
+
 nav{
-    grid-area: 1 / 2 / span 1 / span 4;
+    grid-area: 1 / 3 / span 1 / span 3;
     background: none;
+    padding: 10px;
 }
 
 .featured{
-    grid-area: 2 / 1 / span 1 / span 6; 
+    grid-area: 2 / 1 / span 1 / span 5; 
+}
+
+.newtitle{
+    grid-area: 3 / 2 / span 1 / span 3;
+    border-bottom: 1px solid gray;
+}
+
+.new{
+    grid-area: 4 / 2 / span 1 / span 3; 
+    grid-template-columns: repeat(4, 2fr);
+    text-align: center;
+    display: grid;
+    border-bottom: 1px solid gray;
 }
 
 .new > .product{
-    grid-area: 3 / 2 / span 1 / span 4; 
+    padding: 25px;
 }
 
 .special{
-    grid-area: 4 / 2 / span 1 / span 6;
+    grid-area: 5 / 2 / span 1 / span 3;
+    color: white;
+    background-color: rgb(173, 148, 202);
+    border: 4px solid rgb(92, 47, 145);
+    padding: 5px;
+}
+
+.neattitle{
+    grid-area: 6 / 2 / span 1 / span 3;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.neat{
+    grid-area: 7 / 2 / span 1 / span 3; 
+    grid-template-columns: repeat(6, .60fr);
+    text-align: center;
+    display: grid;
+    border-bottom: 1px solid gray;
 }
 
 .neat > .product{
-    grid-area: 5 / 2 / span 1 / span 4;
+    padding: 25px;
 }
 
-.top > .topleft > .product{
-    grid-area: 6 / 2 / span 1 / span 2;
+.top{
+    grid-area: 8 / 2 / span 1 / span 3; 
+    grid-template-columns: repeat(3, 1.5fr);
+    text-align: left;
+    display: grid 
 }
 
-.top > .topmiddle > .product{
-    grid-area: 6 / 2.5 / span 1 / span 2;
-}
-
+.top > .topleft > .product,
+.top > .topmiddle > .product,
 .top > .topright > .product{
-    grid-area: 6 / 3.5 / span 1 / span 2;
+    padding: .5em;
 }
+
 
 footer{
-    grid-area: 7 / 1 / span 1 / span 6;
-    justify-self: center;
+    grid-area: 9 / 1 / span 1 / span 5; 
+    grid-template-columns: repeat(3, 1.5fr);
+    text-align: left;
+    display: grid;
+    background-color: rgb(173, 148, 202);
+    padding: .5em;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
+
+footer > .links1 > ul > li > a,
+footer > .links2 > ul > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+footer > .links1 > ul > li,
+footer > .links2 > ul > li{
+    list-style-type: none;
+}
+
+
+/****** FLEXBOX STYLING ******/
+nav > ul {
+    display: flex;
+}
+
+nav > ul > li:nth-child(3) {
+    margin-left: auto;
+}
+
+.new > .product > span{
+    align-self: stretch;
+}
+
+.product > button{
+    width: 100%;
+}
+
+.new > .product > span,
+.neat > .product > span{
+    display: flex;
+    flex-flow: row wrap;
+    text-align: left;
+}
+
+
+/****** ANIMATION STYLING ******/
+
+/* Links bigger and underlined when hovered over */
+nav > ul > li{
+    scale: 1;
+    transition: scale 3s ease;
+    text-decoration: none;
+    transition: text-decoration 3s ease;
+}
+
+nav > ul > li:hover{
+    scale: 1.5;
+    transition: scale 3s ease;
+    text-decoration: underline;
+    transition: text-decoration 3s ease;
+}
+
+/* Flashing featured button: Not sure why this isn't working*/
+.featured > button{
+    animation: 5s linear infinite flash-button;
+
+    @keyframes flash-button{
+        0%{
+            background: rgba(173, 148, 202, 1.0);
+        }
+        25%{
+            background: rgba(173, 148, 202, 0.6);
+        }
+        50%{
+            background: rgba(173, 148, 202, 0.3)
+        }
+        75%{
+            background: rgba(173, 148, 202, 0.6);
+        }
+        100%{
+            background: rgba(173, 148, 202, 1.0);
+        }
+    }
+}
+
+/* Rotate Jumbotron word */
+.featured > h1 {
+    transform: rotate(0deg);
+    transition: transform 3s ease;
+}
+
+.featured > h1:hover {
+    transform: rotate(15deg);
+    transition: transform 1s ease-out;
+}
+
+/*Special text scale up and color change */
+.special{
+    scale: 1;
+    transition: scale 3s ease;
+    background-color: rgb(173, 148, 202);
+    border: 4px solid rgb(92, 47, 145);
+    transition: background-color 3s ease;
+    transition: border 3s ease;
+}
+
+.special:hover{
+    scale: 1.10;
+    transition: scale 3s ease;
+    background-color: rgb(92, 47, 145);
+    border: 4px solid rgb(173, 148, 202);
+    transition: background-color 3s ease;
+    transition: border 3s ease;
+}
+
