@@ -42,10 +42,7 @@ nav > ul > li{
 	display: inline-block;
 	margin: .5rem; 
     border-right: 2px solid gray;
-    padding: 0 15px;
-	
-    margin-left: 1rem;
-	
+    padding: 0 15px;	
 }
 
 nav > ul > li:last-child{

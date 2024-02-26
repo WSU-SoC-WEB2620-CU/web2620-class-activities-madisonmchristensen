@@ -61,7 +61,7 @@ body{
 .row3 > .col2col3 > .col2{
     display: flex;
     flex-flow: column nowrap;
-    flex: 1 1 50px; /*if you do 0 instead of 50px it will share the size qually between the two*/
+    flex: 1 1 50px; /*if you do 0 instead of 50px it will share the size equally between the two*/
 }
 
 .row3 > .col2col3 > .col2 > .col2left,
