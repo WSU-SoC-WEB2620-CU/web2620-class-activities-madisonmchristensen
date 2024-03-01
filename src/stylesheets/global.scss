@@ -1,0 +1,32 @@
+/* TODO: Example 06 (Activity 7) CSS goes here */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+  }
+  
+  //Creating a variable
+  $basic-color: #ccc;
+  $primary-color: #007bff;
+  $secondary-color: #6c757d;
+  $success-color: #28a745;
+  $error-color: #dc3545;
+  $warning-color: #ffc107;
+
+  $button-kinds: basic primary secondary success error warning;
+  $button-colors: #ccc, #007bff, #6c757d, #28a745, #dc3545, #ffc107;
+
+  
+  $alert-kinds: basic primary secondary success error warning;
+  $alert-colors: #ccc, #007bff, #6c757d, #28a745, #dc3545, #ffc107;
+
+  //Single value items 
+  //$numberVar: 100; //numeric value
+  //$numberVar2: $numberVar*2;
+
+  //$booleanVar: $numberVar*2=200; //true value, boolean values are useful for if else statements
+
+  //$layout: grid; //string value

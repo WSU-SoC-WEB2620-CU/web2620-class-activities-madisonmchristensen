@@ -1,0 +1,58 @@
+
+@mixin make-alert($color){
+    margin: .5em;
+    padding: .5em 1em;
+    font-size: 1rem;
+    background: lighten($color, 10%);
+    color: darken($color, 30%);
+    border: 1px solid darken($color, 15%);
+    border-radius: 6px;
+  
+    &.title {
+      font-size: 1.5rem;
+      padding-bottom: .5rem;
+  
+      &::after{
+        content: " ";
+        display: block;
+        padding-top: 5px;
+        border-bottom: 1px solid darken($color, 15%);
+      }
+    }
+  }
+  
+  .alert {
+
+    @include make-alert($basic-color);
+
+    @each $kind in $alert-kinds{
+        $ndx: index($alert-kinds, $kind);
+        &.#{$kind}{
+            @include make-alert(nth($alert-colors, $ndx));
+          }
+    }
+    
+  }
+
+  /*
+   &.primary {
+        //TODO: use color #007bff;
+        @include make-alert($primary-color);
+      }
+      &.secondary {
+        //TODO: use color #6c757d;
+        @include make-alert($secondary-color);
+      }
+      &.success {
+        //TODO: use color #28a745;
+        @include make-alert($success-color);
+      }
+      &.error {
+        //TODO: use color #dc3545
+        @include make-alert($error-color);
+      }
+      &.warning {
+        //TODO: use color #ffc107
+        @include make-alert($warning-color);
+      }
+      */

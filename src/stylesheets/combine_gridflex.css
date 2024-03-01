@@ -223,8 +223,7 @@ nav > ul > li:hover{
 }
 
 /* Flashing featured button: Not sure why this isn't working*/
-.featured > button{
-    animation: 5s linear infinite flash-button;
+
 
     @keyframes flash-button{
         0%{
@@ -243,6 +242,10 @@ nav > ul > li:hover{
             background: rgba(173, 148, 202, 1.0);
         }
     }
+    
+
+.featured > button{
+animation: 5s linear infinite flash-button;
 }
 
 /* Rotate Jumbotron word */

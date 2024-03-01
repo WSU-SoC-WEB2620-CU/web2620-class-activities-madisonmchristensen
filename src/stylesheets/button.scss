@@ -1,0 +1,59 @@
+// Add a Mix in
+@mixin make-button($color){
+    margin: .5em;
+    padding: .5em 1em;
+    font-size: 1.2rem;
+    display: inline-block;
+    background: $color;
+    color: white;
+    border: 1px solid darken($color, 15%);
+    border-radius: 6px;
+    transition: background-color .35s ease-in-out;
+    width: 100%;
+  
+    &:hover {
+      background: lighten($color, 10%)
+    }
+    @media (min-width: 500px) {
+        width: calc(50% - 2em);
+    }
+    @media (min-width: 740px) {
+        width: auto;
+    }
+  }
+  
+  // buttons
+  .button {
+    @include make-button($basic-color);
+
+    @each $kind in $button-kinds{
+        $ndx: index($button-kinds, $kind);
+        &.#{$kind}{
+            @include make-button(nth($button-colors, $ndx));
+          }
+    }
+
+  }
+
+   /*
+    &.primary {
+      //TODO: use color #007bff;
+      @include make-button($primary-color);
+    }
+    &.secondary {
+      //TODO: use color #6c757d;
+      @include make-button($secondary-color);
+    }
+    &.success {
+      //TODO: use color #28a745;
+      @include make-button($success-color);
+    }
+    &.error {
+      //TODO: use color #dc3545
+      @include make-button($error-color);
+    }
+    &.warning {
+      //TODO: use color #ffc107
+      @include make-button($warning-color);
+    }
+    */
