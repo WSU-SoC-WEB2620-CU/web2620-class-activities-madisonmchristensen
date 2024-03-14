@@ -223,8 +223,6 @@ nav > ul > li:hover{
 }
 
 /* Flashing featured button: Not sure why this isn't working*/
-
-
     @keyframes flash-button{
         0%{
             background: rgba(173, 148, 202, 1.0);

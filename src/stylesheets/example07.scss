@@ -1,1 +1,114 @@
 /* TODO: Example 07 (Activity 8) CSS goes here */
+
+//creating a function: calc-font-size is the name we created for the function. () argument. put $num as the argument. 
+//return what size for the font it will return
+@function calc-font-size($num){
+    @if unitless($num){
+        @return 3 - ($num - 1) * .3;
+    }
+    @else{
+        @warn "invalid argument. Must be unitless";
+        @return 0;
+    }
+}
+
+//creating a function:
+//return take two color values and mix them together, 
+//mix function takes 3 variables (first color, second color, and percent of mixing)
+@function calc-header-color($num, $color1, $color2){
+    @return mix($color1, $color2, $num*15%);
+}
+
+//creating a for loop: $num is a temporary variable, from 1 to 6 is going through headers h1-h6
+// @for $num from 1 through 6{
+//     h#{$num}{
+//         font-size: calc-font-size($num)*1rem;
+//         color: calc-header-color($num, white, black);
+//     }
+// }
+
+
+//creating a while loop: have to initialize your counter to 1 before you use your while loop
+//want it to terminate once it goes through the loop or it will go on forever.
+$num: 1;
+@while $num <=6{
+    h#{$num}{
+        font-size: calc-font-size($num)*1rem;
+        color: calc-header-color($num, white, black);
+    }
+    $num: $num + 1;
+}
+
+$header-list: huge xlarge large medium small tiny;
+
+//placeholder % gets rid of the .
+//instead of having .header that applies to all headers in the html
+//using the % means we can call it and it can only be used then
+%header{
+    font-weight: bolder;
+    margin: .5em;
+
+    @at-root a#{&}{
+        text-decoration: none;
+    }
+}
+
+@each $hdr in $header-list{
+    .header.#{$hdr}{
+        @extend %header;
+        @extend h#{index($header-list, $hdr)};
+    }
+}
+
+@mixin foo-style{
+    color: white;
+    padding: 5px;
+    margin: auto;
+}
+
+.foo{
+    @include foo-style;
+}
+
+.bar{
+    @extend .foo;
+}
+
+
+/* How @extend can get complicated when there's lots of nested items
+.button .interior .small-icon{
+    width: 10px;
+}
+
+.side{
+    .top, .middle, .bottom{
+        .sign-in,
+        .register{
+            @extend .small-icon;
+        }
+    }
+}
+*/
+
+@import "global";
+@import "button";
+
+.new{
+    @extend .button, .primary;
+}
+
+.edit{
+    @extend .button, .secondary;
+}
+
+.approve{
+    @extend .button, .success;
+}
+
+.deny{
+    @extend .button, .error;
+}
+
+.warn{
+    @extend .button, .warning;
+}
