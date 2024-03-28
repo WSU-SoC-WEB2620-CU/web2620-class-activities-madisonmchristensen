@@ -25,12 +25,20 @@
 
     @include make-alert($basic-color);
 
+     //Alert Maps
+     @each $kind, $color in $buttons{
+      &.#{$kind}{
+          @include make-alert($color);
+      }
+    }
+    
+    /* LISTS
     @each $kind in $alert-kinds{
         $ndx: index($alert-kinds, $kind);
         &.#{$kind}{
             @include make-alert(nth($alert-colors, $ndx));
           }
-    }
+    } */
     
   }
 

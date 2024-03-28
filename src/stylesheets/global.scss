@@ -16,12 +16,18 @@
   $error-color: #dc3545;
   $warning-color: #ffc107;
 
-  $button-kinds: basic primary secondary success error warning;
-  $button-colors: #ccc, #007bff, #6c757d, #28a745, #dc3545, #ffc107;
+  //LISTS
+  //$button-kinds: basic primary secondary success error warning;
+  //$button-colors: #ccc, #007bff, #6c757d, #28a745, #dc3545, #ffc107;
 
-  
-  $alert-kinds: basic primary secondary success error warning;
-  $alert-colors: #ccc, #007bff, #6c757d, #28a745, #dc3545, #ffc107;
+  //MAP.  Key:Value  - Word:Definition
+  //SYNTAX $buttons: (name: property);
+  $buttons: (basic: #ccc,
+             primary: #007bff,
+             secondary: #6c757d,
+             success: #28a745,
+             error: #dc3545,
+             warning: #ffc107);
 
   //Single value items 
   //$numberVar: 100; //numeric value

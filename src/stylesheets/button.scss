@@ -26,12 +26,21 @@
   .button {
     @include make-button($basic-color);
 
+    //Button Maps
+    @each $kind, $color in $buttons{
+      &.#{$kind}{
+          @include make-button($color);
+      }
+    }
+
+    /* LISTS
     @each $kind in $button-kinds{
         $ndx: index($button-kinds, $kind);
         &.#{$kind}{
             @include make-button(nth($button-colors, $ndx));
           }
     }
+    */
 
   }
 
