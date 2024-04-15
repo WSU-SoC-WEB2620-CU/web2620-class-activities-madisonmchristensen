@@ -1,3 +1,151 @@
+// Before Bootstrap (color variable
+$pink: #d63384;
+
+// Import Bootstrap
 @import "bootstrap/scss/bootstrap";
 
+//After Bootstrap (rest of the code)
+
 @import "@fortawesome/fontawesome-free/css/all.css";
+
+/***** BASIC STYLING *****/
+h2, p{
+    padding: 10px;
+}
+
+.pricing > .card-text{
+    font-size: 2em;
+}
+
+.pricing > .card-title{
+    background-color: $pink;
+    color: white;
+}
+
+h2{
+    color: $pink;
+}
+
+.jumbotron{
+    background-image: linear-gradient(45deg, $pink 5%, white 5%, white 30%, $pink 30%, white 100%);
+    color: black;
+    padding: 5px;
+}
+
+.card-body > .btn-primary, .card-img-top, .img-fluid{
+    background-color: $pink !important;
+    text-align: left;
+}
+
+.col-md-8 > .card-body{
+    text-align: left;
+}
+
+.pink{
+    background-color: $pink;
+    color: white;
+}
+
+//Footer styles
+.bootstrapicon > .fa-brands{
+    color: $pink;
+}
+
+h6, .bootstrapicon{
+    color: white;
+}
+
+footer{
+    background-color: rgb(45, 45, 45)
+}
+
+.links1 > ul > li, .links2 > ul > li, .links3 > ul > li{
+    list-style-type: none;
+}
+
+/****** FLEXBOX STYLING ******/
+nav > ul {
+    display: flex;
+}
+
+nav > ul {
+    color: $pink;
+}
+
+nav > ul > li:nth-child(2) {
+    margin-left: auto;
+}
+
+/***** PHOTO GALLERY GRID *****/
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+}
+
+.gallery{
+    padding: 5px;
+    display: grid;
+    gap: 10px;
+
+    grid-template-areas:
+    ". . . . . .                   img1 img1 img1 img1 img1 img1 img2 img2 img3 img3 img4 img4"
+    "img5 img5 img5 img13 img13 img13 img1 img1 img1 img1 img1 img1 img6 img6 img6 img6 img6 img6"
+    "img5 img5 img5 img13 img13 img13 img7 img7 img7 img7 img7 img7 img6 img6 img6 img6 img6 img6"
+    "img8 img8 img8 img8 img8 img8 img7 img7 img7 img7 img7 img7 img9 img9 img9 img10 img10 img10"
+    "img11 img11 img11 img11 img11 img11 img11 img11 img12 img12 img12 img12 img12 img12 img12 img12 img12 img12"                          
+
+}
+
+.img1{
+    grid-area: img1;
+}
+
+.img2{
+    grid-area: img2;
+}
+
+.img3{
+    grid-area: img3;
+}
+
+.img4{
+    grid-area: img4;
+}
+
+.img5{
+    grid-area: img5;
+}
+
+.img6{
+    grid-area: img6;
+}
+
+.img7{
+    grid-area: img7;
+}
+
+.img8{
+    grid-area: img8;
+}
+
+.img9{
+    grid-area: img9;
+}
+
+.img10{
+    grid-area: img10;
+}
+
+.img11{
+    grid-area: img11;
+}
+
+.img12{
+    grid-area: img12;
+}
+
+.img13{
+    grid-area: img13;
+    
+}

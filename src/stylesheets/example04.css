@@ -21,8 +21,8 @@ img{
     display: grid;
     grid-template-columns: 6fr repeat(2, 3fr) 2fr repeat(2, 1fr) 2fr;
     gap: 10px;
-
-    grid-template-areas: "img1 img2 img2 img3 img4 img4 img5" /*How many columns they span is how many you place img2 spans 2 columns so is written as img2 img2*/
+    
+    grid-template-areas: "img1 img2 img2 img3 img4 img4 img5" 
                          "img6 img2 img2 img7 img7 img7 img7"
                          "img6 img9 img9 img7 img7 img7 img7"
                          "img8 img9 img9 img10 img10 img11 img11"
